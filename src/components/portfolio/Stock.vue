@@ -33,15 +33,16 @@ export default {
 		}
 	},
 	methods: {
-		...mapActions(['sellStock']),
+		...mapActions({
+			placeSellOrder: 'sellStock'
+		}),
 		sellStock() {
 			const order = {
 				stockId: this.stock.id,
 				stockPrice: this.stock.price,
 				quantity: this.quantity
 			}
-			console.log(order)
-			this.sellStock()
+			this.placeSellOrder(order)
 		}
 	}
 }
