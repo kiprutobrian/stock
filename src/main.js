@@ -6,6 +6,7 @@ import App from './components/App.vue';
 import {
     routes
 } from './routes';
+import store from './store/store'
 
 Vue.use(VueRouter);
 
@@ -20,5 +21,6 @@ Vue.config.productionTip = false
 new Vue({
     el: '#app',
     router,
+    store,
     render: h => h(App),
 })
