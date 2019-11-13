@@ -1,4 +1,6 @@
 import Vue from 'vue'
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import VueRouter from 'vue-router';
 import App from './components/App.vue';
 import {
