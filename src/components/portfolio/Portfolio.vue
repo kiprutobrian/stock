@@ -1,46 +1,20 @@
 <template>
-	<div class="col-sm-6 col-md-4 my-5">
-		<div class="card">
-			<div class="card-header">
-				<h3 class="card-title">
-					{{ stock.name }}
-					<small>(Price: {{ stock.price }} | Quantity: {{ stock.quantity }})</small>
-				</h3>
-			</div>
-			<div class="card-body">
-				<div class="float-left">
-					<input type="number" class="form-control" placeholder="Quantity" v-model="quantity" />
-				</div>
-				<div class="float-right">
-					<button
-						class="btn btn-success"
-						@click="sellStock"
-						:disabled="quantity <= 0 || isNaN(quantity)"
-					>Sell</button>
-				</div>
-			</div>
-		</div>
+	<div>
+		<app-stock v-for="stock in stocks" :key="stock.id" :stock="stock"></app-stock>
 	</div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import Stock from './Stock.vue'
 export default {
-	props: ['stock'],
-	data() {
-		return {
-			quantity: 0
-		}
+	computed: {
+		...mapGetters({
+			stocks: 'stockPortfolio'
+		})
 	},
-	methods: {
-		sellStock() {
-			const order = {
-				stockId: this.stock.id,
-				stockPrice: this.stock.price,
-				quantity: this.quantity
-			}
-			this.$store.dispatch('buyStock', order)
-			this.quantity = 0
-		}
+	components: {
+		appStock: Stock
 	}
 }
 </script>
