@@ -39,7 +39,7 @@
 					</div>
 				</li>
 				<li>
-					<strong class="nav-link">Funds: {{ funds }}</strong>
+					<strong class="nav-link">Funds: {{ funds | currency }}</strong>
 				</li>
 			</ul>
 		</div>
