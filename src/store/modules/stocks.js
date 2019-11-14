@@ -24,11 +24,11 @@ const actions = {
     }) => {
         commit('SET_STOCKS', stocks);
     },
-    randomizeStocks: ({
-        commit
-    }) => {
-        commit('RND_STOCKS');
-    },
+    // randomizeStocks: ({
+    //     commit
+    // }) => {
+    //     commit('RND_STOCKS');
+    // },
 };
 const getters = {
     stocks: state => {

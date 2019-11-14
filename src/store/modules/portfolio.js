@@ -17,7 +17,7 @@ const mutations = {
                 quantity: quantity
             });
         }
-        state.stocks -= stockPrice * quantity;
+        state.funds -= stockPrice * quantity;
     },
     'SELL_STOCK'(state, {
         stockId,
