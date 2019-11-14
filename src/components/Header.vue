@@ -55,7 +55,10 @@ export default {
 		}
 	},
 	methods: {
-		...mapActions(['randomizeStocks']),
+		...mapActions({
+			randomizeStocks: 'randomizeStocks',
+			fetchData: 'loadData'
+		}),
 		endDay() {
 			this.randomizeStocks()
 		},
@@ -65,6 +68,10 @@ export default {
 				stockPorfolio: this.$store.getters.stockPortfolio,
 				stocks: this.$store.getters.stocks
 			}
+			console.log(data)
+		},
+		loadData() {
+			this.fetchData()
 			console.log(data)
 		}
 	}
