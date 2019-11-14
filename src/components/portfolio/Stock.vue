@@ -1,5 +1,5 @@
 <template>
-	<div class="col-sm-6 col-md-4 my-5">
+	<div class="col-sm-6 col-md-5 my-5">
 		<div class="card">
 			<div class="card-header">
 				<h3 class="card-title">

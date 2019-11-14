@@ -38,11 +38,20 @@
 						<a class="dropdown-item" href="#">Load Data</a>
 					</div>
 				</li>
+				<li>
+					<strong class="nav-link">Funds: {{ funds }}</strong>
+				</li>
 			</ul>
 		</div>
 	</nav>
 </template>
 
 <script>
-export default {}
+export default {
+	computed: {
+		funds() {
+			return this.$store.getters.funds
+		}
+	}
+}
 </script>
