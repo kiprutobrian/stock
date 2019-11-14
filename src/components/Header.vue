@@ -34,8 +34,8 @@
 						<span class="caret"></span>
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Save Data</a>
-						<a class="dropdown-item" href="#">Load Data</a>
+						<a class="dropdown-item" href="#" @click="saveData">Save Data</a>
+						<a class="dropdown-item" href="#" @click="loadData">Load Data</a>
 					</div>
 				</li>
 				<li>
@@ -58,6 +58,14 @@ export default {
 		...mapActions(['randomizeStocks']),
 		endDay() {
 			this.randomizeStocks()
+		},
+		saveData() {
+			const data = {
+				funds: this.$store.getters.funds,
+				stockPorfolio: this.$store.getters.stockPortfolio,
+				stocks: this.$store.getters.stocks
+			}
+			console.log(data)
 		}
 	}
 }

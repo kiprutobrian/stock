@@ -13,6 +13,18 @@
 	</div>
 </template>
 
+<script>
+import Header from './Header.vue'
+export default {
+	components: {
+		appHeader: Header
+	},
+	created() {
+		this.$store.dispatch('initStocks')
+	}
+}
+</script>
+
 <style>
 body {
 	padding: 30px;
@@ -44,15 +56,3 @@ body {
 	}
 }
 </style>
-
-<script>
-import Header from './Header.vue'
-export default {
-	components: {
-		appHeader: Header
-	},
-	created() {
-		this.$store.dispatch('initStocks')
-	}
-}
-</script>
