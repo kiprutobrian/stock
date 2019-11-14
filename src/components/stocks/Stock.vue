@@ -13,7 +13,7 @@
 				</div>
 				<div class="float-right">
 					<button
-						class="btn btn-success"
+						class="btn btn-primary"
 						@click="buyStock"
 						:disabled="quantity <= 0 || isNaN(quantity)"
 					>Buy</button>
