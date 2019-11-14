@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+// import VueResource from 'vueresource';
 import VueRouter from 'vue-router';
 import App from './components/App.vue';
 import {
@@ -9,6 +10,7 @@ import {
 import store from './store/store'
 
 Vue.use(VueRouter);
+// Vue.use(VueResource);
 Vue.filter('currency', (value) => {
     return '$' + value.toLocaleString();
 });
